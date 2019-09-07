@@ -22,7 +22,6 @@ def store_last_seen_id(last_seen_id, file_name):
 
 # Reply tweets for already followed users
 def reply_to_tweets():
-    print('retrieving and replying to tweets...', flush=True)
     last_seen_id = retrieve_last_seen_id(FILE_NAME)
     mentions = api.mentions_timeline(last_seen_id,tweet_mode='extended')
     for mention in reversed(mentions):
